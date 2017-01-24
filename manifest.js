@@ -35,7 +35,7 @@ const manifest = {
                 register: './lib/plugins/database',
                 options: {
                     knex: {
-                        client: 'mysql',
+                        client: process.env.CLIENT,
                         connection: {
                             host: process.env.MYSQL_HOST,
                             user: process.env.MYSQL_USER,
@@ -43,15 +43,16 @@ const manifest = {
                             database: process.env.MYSQL_DB
                         }
                     },
-                    plugins: ['registry'],
                     models: [
                         {
                             tableName: 'users',
-                            modelName: 'User'
+                            modelPath: process.cwd() + '/lib/models/user',
+                            name: 'User'
                         },
                                                 {
                             tableName: 'addresses',
-                            modelName: 'Address'
+                            modelPath: process.cwd() + '/lib/models/address',
+                            name: 'Address'
                         }
                     ]
                 }
