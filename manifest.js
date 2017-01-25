@@ -61,6 +61,11 @@ const manifest = {
         },
         {
             plugin: {
+                register: './lib/plugins/auth'
+            }
+        },
+        {
+            plugin: {
                 register: 'hapi-handlers',
                 options: {
                     includes: './lib/handlers/**/*.js'
