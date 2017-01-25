@@ -40,7 +40,8 @@ const manifest = {
                             host: process.env.MYSQL_HOST,
                             user: process.env.MYSQL_USER,
                             password: process.env.MYSQL_PW,
-                            database: process.env.MYSQL_DB
+                            database: process.env.MYSQL_DB,
+                            charset: 'utf8'
                         }
                     },
                     models: [
