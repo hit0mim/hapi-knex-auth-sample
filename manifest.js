@@ -41,21 +41,9 @@ const manifest = {
                             user: process.env.MYSQL_USER,
                             password: process.env.MYSQL_PW,
                             database: process.env.MYSQL_DB,
-                            charset: 'utf8'
+                            charset: 'utf8_general_ci'
                         }
-                    },
-                    models: [
-                        {
-                            tableName: 'users',
-                            modelPath: process.cwd() + '/lib/models/user',
-                            name: 'User'
-                        },
-                                                {
-                            tableName: 'addresses',
-                            modelPath: process.cwd() + '/lib/models/address',
-                            name: 'Address'
-                        }
-                    ]
+                    }
                 }
             }
         },
