@@ -6,6 +6,14 @@ exports.up = (knex, Promise) => {
         .schema
         .createTable('users', (table) => {
             table.increments().primary();
+            table.string('username').notNullable().unique();
+            table.string('password');
+            table.timestamp('created_at').notNullable();
+        })
+        .createTable('customers', (table) => {
+            table.increments().primary();
+            table.string('created_by').references('username').inTable('users');
+
             table.string('name').notNullable().unique();
             table.boolean('hasAcknowledge').notNullable().default(false);
             table.decimal('averageTransactionAmount', 14, 2).notNullable();
@@ -14,7 +22,7 @@ exports.up = (knex, Promise) => {
         })
         .createTable('addresses', (table) => {
             table.increments().primary();
-            table.string('user_id').references('uuid').inTable('users');
+            table.string('customer_id').references('uuid').inTable('customers');
 
             table.string('type').notNullable();
             table.string('street').notNullable();
@@ -30,5 +38,6 @@ exports.down = (knex, Promise) => {
     return knex
         .schema
         .dropTableIfExists('users')
+        .dropTableIfExists('customers')
         .dropTableIfExists('addresses');
 };

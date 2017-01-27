@@ -1,22 +1,16 @@
-'use strict';
-
 exports.seed = (knex, Promise) => {
 
     const table = 'users';
     const rows = [
 
         {
-            name: 'Test Name',
-            hasAcknowledge: true,                   
-            averageTransactionAmount: 1000.20,
-            uuid: '72eff7d1-efee-44ff-9e07-2560d7a81033'
+            username: 'myUser',
+            password: 'password'
         },
         {
-            name: 'Another Name',
-            hasAcknowledge: false,                   
-            averageTransactionAmount: 1500.20,
-            uuid: '86eff7d1-efee-44ff-9e07-2560d7a5612'
-        }
+            username: 'myUser1',
+            password: 'password1'
+        },
     ];
 
     return knex(table)

@@ -12,6 +12,7 @@
   "author": "Hitomi Mizugaki",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "blipp": "^2.3.0",
     "bookshelf": "^0.10.3",
     "boom": "^4.2.0",

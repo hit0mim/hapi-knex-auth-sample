@@ -8,7 +8,7 @@ module.exports = {
             user: process.env.MYSQL_USER,
             password: process.env.MYSQL_PW,
             database: process.env.MYSQL_DB,
-            charset: 'utf8_general_ci'
+            charset: 'utf8'
         },
         migrations: {
             tableName: 'knex_migrations'
