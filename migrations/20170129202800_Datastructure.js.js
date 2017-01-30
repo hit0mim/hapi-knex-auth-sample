@@ -6,13 +6,13 @@ exports.up = (knex, Promise) => {
         .schema
         .createTable('users', (table) => {
             table.increments().primary();
-            table.string('username').notNullable().unique();
+            table.string('email').notNullable().unique();
             table.string('password');
             table.timestamp('created_at').notNullable();
         })
         .createTable('customers', (table) => {
             table.increments().primary();
-            table.string('created_by').references('username').inTable('users');
+            table.string('created_by').references('email').inTable('users');
 
             table.string('name').notNullable().unique();
             table.boolean('hasAcknowledge').notNullable().default(false);

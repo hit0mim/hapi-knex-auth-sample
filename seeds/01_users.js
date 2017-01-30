@@ -4,12 +4,12 @@ exports.seed = (knex, Promise) => {
     const rows = [
 
         {
-            username: 'myUser',
+            email: 'test1@test.com',
             password: 'password'
         },
         {
-            username: 'myUser1',
-            password: 'password1'
+            email: 'test2@test.com',
+            password: 'password'
         },
     ];
 
