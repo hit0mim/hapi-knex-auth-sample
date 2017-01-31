@@ -1,7 +1,7 @@
 {
-  "name": "homework",
+  "name": "hapi-knex-auth-sample",
   "version": "1.0.0",
-  "description": "homework assignment",
+  "description": "quick sample on hapi, knex and auth",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js -i logs",
