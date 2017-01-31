@@ -68,4 +68,4 @@ trash/
 lib/_users/
 .env*
 .envrc
-
+.DS_Store
